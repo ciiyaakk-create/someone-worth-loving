@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Something Worth Finishing</title>
-<style>
-    body { margin: 0; overflow: hidden; background: #fce4ec; touch-action: none; }
-    canvas { display: block; margin: 0 auto; background: #ffe4e1; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Something Worth Finishing</title>
+  <style>
+    body { margin:0; overflow:hidden; font-family:sans-serif; }
+    canvas { background:#f5e6e6; display:block; margin:0 auto; }
 
-    /* Joystick container */
+    /* Joystick */
     #joystick {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        width: 100px;
-        height: 100px;
-        background: rgba(200,200,200,0.4);
-        border-radius: 50%;
-        z-index: 100;
-        touch-action: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      background: rgba(200,200,200,0.4);
+      border-radius: 50%;
+      z-index: 100;
+      touch-action: none;
+    }
+    #knob {
+      width: 50px;
+      height: 50px;
+      background: rgba(150,150,150,0.7);
+      border-radius: 50%;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      touch-action: none;
     }
 
-    /* Joystick knob */
-    #knob {
-        width: 50px;
-        height: 50px;
-        background: rgba(150,150,150,0.7);
-        border-radius: 50%;
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        touch-action: none;
+    /* Conversation box */
+    #conversation {
+      position: fixed;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.9);
+      padding:10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      max-width: 250px;
+      display:none;
+      z-index: 100;
     }
-</style>
+  </style>
 </head>
 <body>
-<canvas id="gameCanvas"></canvas>
-<div id="joystick">
-    <div id="knob
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+  <div id="joystick">
+    <div id="knob"></div>
+  </div>
+
+  <div id="conversation"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
